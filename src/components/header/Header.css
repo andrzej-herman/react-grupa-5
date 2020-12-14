@@ -1,0 +1,14 @@
+.jumbo {
+    background-image: url("../../img/header.jpg");
+}
+
+.jumbo > h1 {
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.jumbo > p {
+    color: white;
+    font-weight: bold;
+}
