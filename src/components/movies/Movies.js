@@ -4,8 +4,6 @@ import Karta from "../card/Karta";
 import { movies } from "../../data";
 
 const Movies = (props) => {
-  // props.whatToFind
-
   const getMovies = (allMovies, text) => {
     if (text === null || text.length === 0) return allMovies;
 
@@ -29,6 +27,7 @@ const Movies = (props) => {
           movieTitle={movie.title}
           director={movie.director}
           description={movie.description}
+          image={movie.image}
         />
       ))}
     </div>

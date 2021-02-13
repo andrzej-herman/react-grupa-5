@@ -5,6 +5,11 @@ import "./Karta.css";
 const Karta = (props) => {
   return (
     <Card className="karta">
+      <Card.Img
+        variant="top"
+        src={props.image}
+        style={{ width: 280, height: 200 }}
+      />
       <Card.Body>
         <Card.Title>{props.movieTitle}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">
