@@ -4,9 +4,26 @@ import Karta from "../card/Karta";
 import { movies } from "../../data";
 
 const Movies = (props) => {
+  // props.whatToFind
+
+  const getMovies = (allMovies, text) => {
+    if (text === null || text.length === 0) return allMovies;
+
+    let result = [];
+    allMovies.forEach((movie) => {
+      if (movie.title.includes(text) || movie.director.includes(text)) {
+        result.push(movie);
+      }
+    });
+
+    return result;
+  };
+
+  const selectedMovies = getMovies(movies, props.whatToFind);
+
   return (
     <div className="movies">
-      {movies.map((movie) => (
+      {selectedMovies.map((movie) => (
         <Karta
           key={movie.title}
           movieTitle={movie.title}
@@ -14,7 +31,6 @@ const Movies = (props) => {
           description={movie.description}
         />
       ))}
-      <h1>{props.whatToFind}</h1>
     </div>
   );
 };
